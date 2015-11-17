@@ -14,4 +14,11 @@ router.post('/register', function(req, res) {
   });
 });
 
+
+router.post('/login', function(req, res) {
+  User.authenticate(req.body, function(err, user){
+    res.status(err ? 400 : 200).send(err || user);
+  });
+});
+
 module.exports = router;
