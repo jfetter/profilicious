@@ -42,7 +42,6 @@ function sendToProfile(){
         window.location.replace('/profiles/' + id);
     })
     .fail(function(err){
-      console.log(fail)
       swal('Error:', err, 'error');
     });
 }
