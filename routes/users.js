@@ -17,16 +17,10 @@ router.post('/register', function(req, res) {
 router.post('/login', function(req, res) {
   console.log("cookies ", req.cookies)
   User.authenticate(req.body, function(err, user){
+    if (err) return res.status(400).send(err) 
     res.cookie('username', user.username);
-    res.cookie('userId', user._id.toString());
-    if (err) {
-      res.status(400).send(err) 
-     } 
-     else {
-       res.send(user)
-     }
-      
-    // res.status(err ? 400 : 200).send(err || user);
+    res.cookie('userId', user._id.toString()); 
+    res.send(user);     
   });
 });
 

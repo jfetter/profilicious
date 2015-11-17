@@ -16,6 +16,15 @@ block content
         label(for='pw2') Password
         input#pw2.form-control(type='password', placeholder='Password (again)')
       button.btn.btn-default#register Register
-
+      .moreInfo.row
+        .col-sm-12
+          .form-group.hidden
+            label(for='email') Username
+            input#email.form-control.hidden(type='text', placeholder='email')
+          .form-group.hidden
+            label(for='image') image URL
+            input#image.form-control.hidden(type='password', placeholder='url of image')
+            // plugin gravatar here if time
+          button.btn.btn-default.hidden#submit submit
 block js
   script(src='js/register.js')

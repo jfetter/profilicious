@@ -1,14 +1,18 @@
 extends ./layout
 
 block css
-  link(href='css/style.css', rel='stylesheet')
+	link(href='css/style.css', rel='stylesheet')
 
 block content
-  .container
-    br
-    .jumbotron
-      h1= user.username
-      
+	.container
+		.row
+			br
+			.jumbotron
+				h1.usename= user.username
+				img#avatar(src= user.image)
+		.row
+			button.logout log Out
 
 block js
-  script(src='../js/main.js')
+
+	script(src='js/profiles.js')
