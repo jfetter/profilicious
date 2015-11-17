@@ -13,10 +13,11 @@ function login(e) {
 
   $.post('/users/login', {username: username, password: pw})
   .done(function(data){
-    console.log(data);
+    window.location.replace('/');
   })
   .fail(function(err){
+    $('#username').val('');
+    $('#pw').val('');
     swal('Error:', err, 'error');
   });
-
 }
