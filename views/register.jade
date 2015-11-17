@@ -7,24 +7,31 @@ block content
   .container
     div
       .form-group
-        label(for='username') Username
-        input#username.form-control(type='text', placeholder='Username')
+        label#un(for='username') Username
+        input#username.form-control.lab(type='text', placeholder='Username')
       .form-group
-        label(for='pw1') Password
-        input#pw1.form-control(type='password', placeholder='Password')
+        label.lab(for='pw1') Password
+        input#pw1.form-control.lab(type='password', placeholder='Password')
       .form-group
-        label(for='pw2') Password
-        input#pw2.form-control(type='password', placeholder='Password (again)')
-      button.btn.btn-default#register Register
+        label.lab(for='pw2') Password
+        input#pw2.form-control.lab(type='password', placeholder='Password (again)')
+      button.btn.btn-default.lab#register Register
       .moreInfo.row
         .col-sm-12
           .form-group.hidden
-            label(for='email') Username
+            label(for='email') email
             input#email.form-control.hidden(type='text', placeholder='email')
           .form-group.hidden
             label(for='image') image URL
-            input#image.form-control.hidden(type='password', placeholder='url of image')
+            input#image.form-control.hidden(type='text', placeholder='url of image')
             // plugin gravatar here if time
+          .form-group.hidden
+            label(for='tree') tree
+            input#tree.form-control.hidden(type='text', placeholder='favorite type of tree')
+          .form-group.hidden
+            label(for='tree') favorite hackin' tools
+            input#tree.form-control.hidden(type='text', placeholder='favorite type of tree')
+
           button.btn.btn-default.hidden#submit submit
 block js
   script(src='js/register.js')

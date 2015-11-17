@@ -8,11 +8,18 @@ block content
 		.row
 			br
 			.jumbotron
-				h1.usename= user.username
-				img#avatar(src= user.image)
+				h1.username= user.username
+			img#avatar(src= user.image)
+		.row
+			.col-sm-6
+				h3.tree= user.tree
+			.col-sm-6
+				h3.tree_fall= user.tree_fall
 		.row
 			button.logout log Out
+			button.edit(data-id= user._id) edit
+			button.delete delete
 
 block js
 
-	script(src='js/profiles.js')
+	script(src='../js/profiles.js')

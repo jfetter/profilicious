@@ -4,6 +4,7 @@ html(lang='en')
     title= title
     link(href='../vendor/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     link(href='../vendor/sweetalert/dist/sweetalert.css', rel='stylesheet')
+    link(href='../css/style.css', rel='stylesheet')
     block css
   body
     nav.navbar.navbar-default
@@ -18,9 +19,9 @@ html(lang='en')
         #nav-collapse.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
-              a(href='/register')#registerLink Register
+              a.regist(href='/register')#registerLink Register
             li
-              a(href='/login')#loginLink Login
+              a.log-in(href='/login')#loginLink Login
 
     block content
     script(src='../vendor/jquery/dist/jquery.min.js')

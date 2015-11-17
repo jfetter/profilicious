@@ -10,7 +10,9 @@ var userSchema = Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   email: {type: String, required: false},
-  image: {type: String, required: false, default: "http://www.planwallpaper.com/static/images/9-credit-1.jpg"}
+  image: {type: String, required: false, default: "http://www.planwallpaper.com/static/images/9-credit-1.jpg"},
+  tree: {type: String},
+  tree_fall: {type: String}
   //try to pull in that image thing from the user profile database
 });
 

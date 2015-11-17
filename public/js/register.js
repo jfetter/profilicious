@@ -14,22 +14,35 @@ function register(e) {
   var pw1 = $('#pw1').val();
   var pw2 = $('#pw2').val();
 
+
   if(pw1 !== pw2){
     $('#pw1').val('');
     $('#pw2').val('');
     swal('Error:', 'Passwords do not match.', 'error');
   } else {
-    $.post('/users/register', {username: username, password: pw1})
-    .done(function(data){
+      $("#un").text(username).data("pw", $("#pw1").val()); 
       $(".hidden").removeClass("hidden")
-      id = data._id
-    })
-    .fail(function(err){
-      swal('Error:', err, 'error');
-    });
+      $(".lab").addClass("hidden")
   }
 }
 
 function sendToProfile(){
-  window.location.replace('/profiles/' + id);
+      var username = $('#un').text();
+      var pw1 = $('#un').data("pw");
+      console.log("PW1etc", pw1, username)
+      var image = $("#image").val();
+      var email = $("#email").val();
+      var tree = $("#tree").val();
+      var tree_fall = $("#tree_fall").val();
+    $.post('/users/register', {username: username, password: pw1, email: email, image: image, tree: tree, tree_fall: tree_fall})
+      .done(function(data){
+        console.log(data)
+        id = data._id
+        console.log(id)
+        window.location.replace('/profiles/' + id);
+    })
+    .fail(function(err){
+      console.log(fail)
+      swal('Error:', err, 'error');
+    });
 }

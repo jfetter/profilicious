@@ -13,6 +13,13 @@ router.get('/:id', authMiddleware, function(req, res) {
  	})
 });
 
+router.put("/:id", function(req, res){
+	User.findByIdAndDelete(req.params.id, function(err, user){
+ 		console.log(user);
+  res.render("index");
+	})
+})
+
 // router.get("/info", function(req, res){
 // 	res.status(err ? 400: 200).send(err ? "couldn't find user": user)
 // 	User.findById(user._id)
