@@ -1,13 +1,13 @@
-doctype html
-html(lang="en")
-  head
-    title Home
-    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css")
-    link(href="css/style.css")
-  body
-    .container
-      br
-      .jumbotron
-        h1 Hey!
-    script(src='bower_components/jquery/dist/jquery.min.js')
-    script(src='js/main.js')
+extends ./layout
+
+block css
+  link(href='css/style.css', rel='stylesheet')
+
+block content
+  .container
+    br
+    .jumbotron
+      h1 Hey!
+
+block js
+  script(src='js/main.js')
