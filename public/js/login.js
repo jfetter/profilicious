@@ -13,8 +13,9 @@ function login(e) {
 
   $.post('/users/login', {username: username, password: pw})
   .done(function(data){
-    window.location.replace('/');
-  })
+    var id = data._id
+    window.location.assign("/profiles/" + id);
+  })//done
   .fail(function(err){
     $('#username').val('');
     $('#pw').val('');

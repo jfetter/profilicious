@@ -2,8 +2,8 @@ doctype html
 html(lang='en')
   head
     title= title
-    link(href='vendor/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
-    link(href='vendor/sweetalert/dist/sweetalert.css', rel='stylesheet')
+    link(href='../vendor/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='../vendor/sweetalert/dist/sweetalert.css', rel='stylesheet')
     block css
   body
     nav.navbar.navbar-default
@@ -25,8 +25,7 @@ html(lang='en')
               a#logout Logout
 
     block content
-    script(src='vendor/jquery/dist/jquery.min.js')
-    script(src='vendor/bootstrap/dist/js/bootstrap.min.js')
-    script(src='vendor/sweetalert/dist/sweetalert.min.js')
-    script(src='js/main.js')
+    script(src='../vendor/jquery/dist/jquery.min.js')
+    script(src='../vendor/bootstrap/dist/js/bootstrap.min.js')
+    script(src='../vendor/sweetalert/dist/sweetalert.min.js')
     block js

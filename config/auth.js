@@ -6,6 +6,7 @@ module.exports = function(req, res, next){
   var userId = req.cookies.userId;
   User.findById(userId, function(err, user){
     if(err || !user) return res.status(401).send(err || 'Authentication required.');
+    //res.send(user._id)
     next();
   });
 };

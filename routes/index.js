@@ -2,9 +2,12 @@
 
 var express = require('express');
 var router = express.Router();
+var authMiddleware = require('../config/auth');
+
 
 router.get('/', function(req, res) {
-  res.render('index', {title: 'Auth'});
+	console.log(" routed to render index", req.body)
+  res.render('index', {data: req.body, title: 'Welcome '});
 });
 
 router.get('/register', function(req, res) {

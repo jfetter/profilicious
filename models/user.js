@@ -8,7 +8,10 @@ var User;
 
 var userSchema = Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  email: {type: String, required: false},
+  image: {type: String, required: false}
+  //try to pull in that image thing from the user profile database
 });
 
 userSchema.statics.register = function(user, cb) {
