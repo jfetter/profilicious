@@ -16,7 +16,7 @@ function showPage(){
 function deleteProf(){
 	var id = $(".edit").data("id")
 	console.log("ID", id)
-	 $.delete('/users' + id)
+	 $.delete ('/users' + id)
   .done(function(){
     window.location.replace('/');
   })
