@@ -15,10 +15,10 @@ function register(e) {
   var pw2 = $('#pw2').val();
 
 
-  if(pw1 !== pw2){
+  if(pw1 !== pw2 || pw1.length < 1 || username.length < 1){
     $('#pw1').val('');
     $('#pw2').val('');
-    swal('Error:', 'Passwords do not match.', 'error');
+    alert('invalid password.');
   } else {
       $("#un").text(username).data("pw", $("#pw1").val()); 
       $(".hidden").removeClass("hidden")
