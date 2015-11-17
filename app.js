@@ -4,6 +4,7 @@ var PORT = process.env.PORT || 3000;
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 
 var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/userauth';
@@ -22,6 +23,7 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(express.static('public'));
 
 // ROUTES

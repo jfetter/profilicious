@@ -6,6 +6,7 @@ $(function(){
 
 function login(e) {
   e.preventDefault();
+  console.log('login');
 
   var username = $('#username').val();
   var pw = $('#pw').val();

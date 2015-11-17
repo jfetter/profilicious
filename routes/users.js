@@ -14,11 +14,18 @@ router.post('/register', function(req, res) {
   });
 });
 
-
 router.post('/login', function(req, res) {
   User.authenticate(req.body, function(err, user){
+    res.cookie('username', user.username);
+    res.cookie('userId', user._id.toString());
     res.status(err ? 400 : 200).send(err || user);
   });
 });
+
+router.post('/logout', function(req, res) {
+  res.clearCookie('username');
+  res.clearCookie('userId');
+  res.send();
+})
 
 module.exports = router;

@@ -3,5 +3,13 @@
 $(document).ready(init);
 
 function init() {
-  console.log('Hello jQuery!');
+  $('#logout').click(logout);
 }
+
+function logout() {
+  $.post('/users/logout')
+  .done(function(){
+    window.location.replace('/');
+  });
+}
+
